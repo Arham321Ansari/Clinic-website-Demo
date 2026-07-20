@@ -9,6 +9,7 @@ import AppointmentCTA from "../components/AppointmentCTA/AppointmentCTA";
 import FAQ from "../components/FAQ/FAQ";
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
+import FadeIn from "../components/Common/Fadein";
 
 
 function Home() {
@@ -16,15 +17,33 @@ function Home() {
     <>
       <Navbar />
       <Hero />
-      <Services />
-      <About />
-      <WhyChoose />
-      <Statistics/>
-      <Doctors/>
-      <AppointmentCTA/>
-      <FAQ/>
-      <Contact/>
-      <Footer/>
+      <FadeIn>
+        <Services />
+      </FadeIn>
+      <FadeIn>
+        <About />
+      </FadeIn>
+      <FadeIn>
+        <WhyChoose />
+      </FadeIn>
+      <FadeIn>
+        <Statistics/>
+      </FadeIn>
+      <FadeIn>
+        <Doctors/>
+      </FadeIn>
+      <FadeIn>
+        <AppointmentCTA/>
+      </FadeIn> 
+      <FadeIn>
+        <FAQ/>
+      </FadeIn>
+      <FadeIn>
+        <Contact/>
+      </FadeIn>
+      <FadeIn>
+        <Footer/>
+      </FadeIn>
     </>
   );
 }
