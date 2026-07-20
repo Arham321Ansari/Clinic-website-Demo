@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Stethoscope } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,13 +16,29 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    "Home",
-    "About",
-    "Services",
-    "Doctors",
-    "Contact",
-  ];
+ const navLinks = [
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "About",
+    path: "/about",
+  },
+  {
+    name: "Services",
+    path: "/",
+  },
+  {
+    name: "Gallery",
+    path: "/gallery",
+  },
+  {
+    name: "Contact",
+    path: "/",
+  },
+  
+];
 
   return (
     <header
@@ -53,14 +70,20 @@ function Navbar() {
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((item) => (
-            <a
-              key={item}
-              href="#"
-              className="font-medium hover:text-teal-600 transition"
-            >
-              {item}
-            </a>
-          ))}
+              <NavLink
+                key={item.name}
+                to={item.path}
+                className={({ isActive }) =>
+                  `font-medium transition ${
+                    isActive
+                      ? "text-teal-600 font-semibold"
+                      : "text-slate-700 hover:text-teal-600"
+                  }`
+                }
+              >
+                {item.name}
+              </NavLink>
+        ))}
         </nav>
 
         {/* Button */}
@@ -82,14 +105,21 @@ function Navbar() {
         <div className="md:hidden bg-white shadow-lg">
 
           {navLinks.map((item) => (
-            <a
-              key={item}
-              href="#"
-              className="block px-6 py-4 border-b hover:bg-gray-100"
-            >
-              {item}
-            </a>
-          ))}
+                <NavLink
+                  key={item.name}
+                  to={item.path}
+                  onClick={() => setIsOpen(false)}
+                  className={({ isActive }) =>
+                    `block px-6 py-4 border-b transition ${
+                      isActive
+                        ? "bg-teal-50 text-teal-600 font-semibold"
+                        : "hover:bg-gray-100"
+                    }`
+                  }
+                >
+                  {item.name}
+                </NavLink>
+        ))}
 
           <div className="p-5">
             <button className="w-full bg-teal-600 text-white py-3 rounded-full">
