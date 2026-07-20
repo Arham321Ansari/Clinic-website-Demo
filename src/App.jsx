@@ -10,6 +10,8 @@ import { Routes } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 import Gallery from './pages/Gallery'
 import About from './pages/About'
+import Contact from './pages/Contact'
+import Services from './pages/Services'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -18,6 +20,8 @@ function App() {
       <Route path='/' element={<Home/>}/>
       <Route path="/gallery" element={<Gallery />} />
       <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/services" element={<Services />} />
     {/* <Home/> */}
     </Routes>
   )

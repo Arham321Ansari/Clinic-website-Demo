@@ -27,7 +27,7 @@ function Navbar() {
   },
   {
     name: "Services",
-    path: "/",
+    path: "/services",
   },
   {
     name: "Gallery",
@@ -35,7 +35,7 @@ function Navbar() {
   },
   {
     name: "Contact",
-    path: "/",
+    path: "/contact",
   },
   
 ];
